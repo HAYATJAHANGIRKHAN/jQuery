@@ -4,9 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>jQuery</title>
+    <style>
+        h1 {
+            transition: all 0.3s ease-in-out;
+        }
+    </style>
 </head>
-<body>
+<body >
     this is my first jQuery project....
+    <h1>hi hayat jahangir khan</h1>
     <p>Asalamualikum </p>
 </body>
 <script src="jquery.js"></script>
@@ -15,6 +21,78 @@
     $('p').click();
     $('p').click(function(){
         console.log('you clicked')
-    })
+        $('p').hide();
+        $('h1').dblclick(function(){
+            console.log("you are the best boy of the word")
+        })
+         })
+
+
+//          $(document).ready(function () {
+//     $("h1").hover(
+//         function () {
+//             $(this).css("text-transform", "uppercase");
+//         },
+//         function () {
+//             $(this).css("text-transform", "none");
+//         }
+//     );
+// });
+
+
+$(document).ready(function () {
+    $("h1").hover(
+        function () {
+            $(this).css({
+                "text-transform": "uppercase",
+                "color": "red", // Text color changes to red
+                "background-color": "#00ff00" ,
+               "border": "2px solid black" ,
+               "padding": "150px",
+            //    "align-item" : "center",
+            //    "justify-content" : "center",
+
+            });
+        },
+        function () {
+            $(this).css({
+                "text-transform": "none",
+                "color": "black", // Text color reverts to black
+                "background-color": "white",
+                 
+            });
+        }
+    );
+});
+
+
+$(document).ready(function () {
+            $("body").click(function () {
+                // Change the background color to a random color
+                $(this).css("background-color", getRandomColor());
+            });
+
+            // Function to generate a random color
+            function getRandomColor() {
+                let letters = "0123456789ABCDEF";
+                let color = "#";
+                for (let i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            }
+        });
+
+
+
+
+
+
+    
+
+
+
+        
+    
     </Script>
 </html>
